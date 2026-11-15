@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit"
   },
+  "postinstall": "prisma generate",
   "engines": {
     "node": "24.x"
   },
