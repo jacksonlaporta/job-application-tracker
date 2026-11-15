@@ -3,6 +3,14 @@
 import "dotenv/config";
 import { defineConfig } from "prisma/config";
 
+const databaseUrl = process.env["DATABASE_URL"];
+
+if (!databaseUrl) {
+  console.warn(
+    "DATABASE_URL is not set. Copy .env.example to .env before running a Prisma command that connects to the database.",
+  );
+}
+
 export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
