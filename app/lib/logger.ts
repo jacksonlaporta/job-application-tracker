@@ -10,6 +10,8 @@ function describeError(error: unknown) {
     return {
       name: error.name,
       message: error.message,
+      code: "code" in error ? String(error.code) : undefined,
+      digest: "digest" in error ? String(error.digest) : undefined,
       stack: error.stack,
     };
   }
