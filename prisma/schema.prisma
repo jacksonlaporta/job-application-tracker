@@ -17,6 +17,8 @@ enum Stage {
   Applied
   Interview
   Closed
+
+  @@map("stages")
 }
 
 model Application {
@@ -25,6 +27,8 @@ model Application {
   company   String
   url       String?
   stage     Stage    @default(Saved)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("applications")
 }
