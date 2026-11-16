@@ -37,7 +37,7 @@ export default function ApplicationForm() {
             </div>
 
             <div>
-                <label htmlFor="year">URL (optional)</label>
+                <label htmlFor="url">URL (optional)</label>
                 <input
                     id="url"
                     name="url"

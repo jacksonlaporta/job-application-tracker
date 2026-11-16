@@ -42,10 +42,10 @@ export async function createApplication(
   try {
     await saveApplication(result.data);
   } catch (error) {
-    logger.error("book.create.failed", { error });
+    logger.error("application.create.failed", { error });
     return {
       errors: {},
-      message: "The book could not be saved. Please try again.",
+      message: "The application could not be saved. Please try again.",
       values,
     };
   }
