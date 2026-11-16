@@ -9,6 +9,7 @@ const config: Config = {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coverageProvider: "v8",
+  watchman: false,
 };
 
 export default createJestConfig(config);
