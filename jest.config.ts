@@ -10,6 +10,7 @@ const config: Config = {
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   watchman: false,
+  testPathIgnorePatterns: ["<rootDir>/infra/"],
 };
 
 export default createJestConfig(config);
