@@ -1,3 +1,4 @@
+import ApplicationStageForm from "./stage-form";
 import { listApplications } from "@/app/lib/applications";
 
 export async function ApplicationList() {
@@ -12,6 +13,7 @@ export async function ApplicationList() {
             {applications.map((application) => (
                 <li key={application.id}>
                     {application.title}, by {application.company}
+                    <ApplicationStageForm id={application.id} stage={application.stage} />
                 </li>
             ))}
         </ul>
