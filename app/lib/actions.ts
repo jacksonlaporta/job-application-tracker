@@ -64,7 +64,7 @@ export async function createApplication(
 }
 
 export async function changeApplicationStage(
-  previousStage: StageFormState,
+  previousState: StageFormState,
   formData: FormData,
 ): Promise<StageFormState> {
   const result = validateStageChange({
