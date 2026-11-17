@@ -1,4 +1,4 @@
-export const LOGIN_COOKIE = "books_login";
+export const LOGIN_COOKIE = "job_app_tracker_login";
 
 export type LoginAttempt = {
   state: string;
