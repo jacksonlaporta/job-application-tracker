@@ -1,8 +1,7 @@
 import { connection, NextResponse } from "next/server";
 import * as client from "openid-client";
 import { getCallbackUrl, getOidcConfig } from "@/app/lib/oidc";
-
-const LOGIN_COOKIE = "job_app_tracker_login";
+import { LOGIN_COOKIE } from "@/app/lib/login-attempt";
 
 export async function GET() {
   await connection();
