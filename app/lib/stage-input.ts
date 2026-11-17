@@ -20,6 +20,7 @@ export type RawStageChange = {
 };
 
 const stages: readonly string[] = Object.values(Stage);
+const MAX_ID = 2147483647;
 
 function isApplicationStage(value: unknown): value is Stage {
   return typeof value === "string" && stages.includes(value);
@@ -30,7 +31,8 @@ function parseId(value: unknown): number | null {
     return null;
   }
 
-  return Number(value);
+  const id = Number(value);
+  return id >= 1 && id <= MAX_ID ? id : null;
 }
 
 export function validateStageChange(raw: RawStageChange): StageChangeResult {
