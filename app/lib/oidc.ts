@@ -18,6 +18,10 @@ export function getOidcConfig(): Promise<client.Configuration> {
       requireEnv("COGNITO_CLIENT_ID"),
       requireEnv("COGNITO_CLIENT_SECRET"),
     )
+    .then((config) => {
+      client.enableNonRepudiationChecks(config);
+      return config;
+    })
     .catch((error: unknown) => {
       cachedConfig = undefined;
       throw error;
