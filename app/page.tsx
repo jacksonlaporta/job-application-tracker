@@ -4,12 +4,18 @@ import ApplicationForm from "./ui/application-form";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Application list</h1>
+    <main className="mx-auto w-full max-w-2xl space-y-8 p-6">
+      <h1 className="text-2xl font-bold">Job Application Tracker</h1>
+
       <ApplicationForm />
-      <Suspense fallback={<p>Loading the list…</p>}>
-        <ApplicationList />
-      </Suspense>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Applications</h2>
+
+        <Suspense fallback={<p className="text-green-700">Loading applications…</p>}>
+          <ApplicationList />
+        </Suspense>
+      </section>
     </main>
   );
 }
